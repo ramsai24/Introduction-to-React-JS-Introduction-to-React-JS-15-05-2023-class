@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="https://unpkg.com/react@17.0.0/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@17.0.0/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone@7.12.4/babel.js"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;1,100;1,300;1,400;1,500;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./index.css" />
+  </head>
+  <body>
+    <div id="root"></div>
+    <!-- <script type="text/javascript">
+      const rootElement = document.getElementById("root");
+      const element = document.createElement("h1");
+      element.textContent = "Hello World!";
+      element.classList.add("greeting");
+      rootElement.appendChild(element);
+    </script> -->
+    <!-- <script type="module">
+      const elementProps = { className: "greeting", children: "Hello Ram" };
+      const elementTag = "h1";
+      const element = React.createElement(elementTag, elementProps);
+      ReactDOM.render(element, document.getElementById("root"));
+    </script> -->
+
+    <script type="text/babel" src="index.js">
+      let element = <h1 className="greeting">Hello World !</h1>;
+
+      //or
+      //Parameterizing with variables names which mean placing variable name in the JSX syntax
+      const className = "greeting";
+      const name = "Ram";
+
+      element = <h1 className={className}>Hello {name}</h1>;
+      ReactDOM.render(element, document.getElementById("root"));
+
+      //function as arguments
+
+      let fullName = (user) => user.firstName + " " + user.lastName;
+
+      let user = { firstName: "Rahul", lastName: "Athuluri" };
+
+      let newElement = <h1 className={className}>Hello {fullName(user)}</h1>;
+      ReactDOM.render(newElement, document.getElementById("root"));
+
+      //nestedElements in JSX
+    </script>
+  </body>
+</html>
